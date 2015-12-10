@@ -79,12 +79,16 @@ namespace com.ndustrialio.api.ngest
 
 
                 // Need to modify the property since adding causes an exception.
+                // Probably should be a function.
                 Type type = typeof(HttpWebRequest);
-                string propertyName = "ContentType";
+                PropertyInfo headerProperty;
+                PropertyInfo property;
+                string propertyName;
 
-                PropertyInfo headerProperty = type.GetProperty(propertyName);
+                propertyName = "ContentType";
+                headerProperty = type.GetProperty(propertyName);
                 HeaderProperties[propertyName] = headerProperty;
-                PropertyInfo property = HeaderProperties[propertyName];
+                property = HeaderProperties[propertyName];
                 property.SetValue(request, "application/json", null);
 
                 propertyName = "Accept";
