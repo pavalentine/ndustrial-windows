@@ -100,6 +100,7 @@ namespace com.ndustrialio.api.ngest
                 //request.Headers.Add("Content-Type", "application/json");
                 //request.Headers.Add("Accept", "application/json");
 
+
                 request.Method = WebRequestMethods.Http.Post;
 
 
@@ -123,11 +124,11 @@ namespace com.ndustrialio.api.ngest
 
                 using (response = (HttpWebResponse)request.GetResponse())
                 {
-                    if (response.StatusCode != HttpStatusCode.OK)
-                    {
-                        Console.WriteLine("Failed to send data!");
-                    }
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.WriteLine("Failed to send data!");
                 }
+            }
 
                 //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
